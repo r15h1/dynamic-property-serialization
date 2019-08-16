@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docker: Launch .NET Core (Preview)",
+            "type": "docker-coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "dockerBuild": {},
+            "dockerRun": {},
+            "appFolder": "/home/rishi/programagic/msnet/DynamicallySelectPropertiesToSerialize/src/DynamicSerialization"
+        },
+        {
+            "name": ".NET Core Docker Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "pipeProgram": "docker",
+                "pipeArgs": [ "exec", "-i", "07960478e1ae" ],
+                "debuggerPath": "/vsdbg/vsdbg",
+                "pipeCwd": "${workspaceRoot}",
+                "quoteArgs": false
+            },
+            "appFolder": "/home/rishi/programagic/msnet/DynamicallySelectPropertiesToSerialize/src/DynamicSerialization"
+        }
+    ]
+}
