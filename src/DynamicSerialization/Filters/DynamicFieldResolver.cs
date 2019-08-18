@@ -17,7 +17,7 @@ namespace DynamicSerialization.Filters
             if (!serializedProperties.ContainsKey(type)) serializedProperties[type] = new HashSet<string>();
 
             foreach (var prop in jsonProperties)
-                if (prop.Trim().Length > 0)
+                if(!string.IsNullOrWhiteSpace(prop))
                     serializedProperties[type].Add(prop);
         }
 
